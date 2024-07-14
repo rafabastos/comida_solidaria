@@ -1,6 +1,6 @@
 import { observer } from "mobx-react-lite"
 import React, { FC } from "react"
-import { Image, ImageStyle, TextStyle, ViewStyle } from "react-native"
+import { Image, ImageStyle, TextStyle, View, ViewStyle } from "react-native"
 import {
   Button,
   Screen,
@@ -8,17 +8,14 @@ import {
 } from "app/components"
 import { AppStackScreenProps } from "../navigators"
 import { colors, spacing } from "../theme"
-import { useNavigation } from "@react-navigation/native"
-import { ROUTES } from "app/utils/constants"
+import { useSafeAreaInsetsStyle } from "../utils/useSafeAreaInsetsStyle"
 
 const welcomeLogo = require("../../assets/images/logo.png")
 
-interface WelcomeScreenProps extends AppStackScreenProps<"Welcome"> { }
+interface NewEventScreenProps extends AppStackScreenProps<"Welcome"> { }
 
-export const WelcomeScreen: FC<WelcomeScreenProps> = observer(function WelcomeScreen(
+export const NewEventScreen: FC<NewEventScreenProps> = observer(function NewEventScreen(
 ) {
-  const { navigate } = useNavigation()
-
   return (
     <Screen
       style={$container}
@@ -35,13 +32,13 @@ export const WelcomeScreen: FC<WelcomeScreenProps> = observer(function WelcomeSc
       <Button
         preset="reversed"
         style={$button}
-        onPress={() => navigate(ROUTES.NEW_EVENT)}
+        onPress={() => { }}
         tx="welcomeScreen.initEvent"
       />
       <Button
         preset="reversed"
         style={$button}
-        onPress={() => navigate(ROUTES.MANAGE_EVENTS)}
+        onPress={() => { }}
         tx="welcomeScreen.manageEvents"
       />
     </Screen>

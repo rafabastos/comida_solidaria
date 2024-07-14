@@ -17,6 +17,7 @@ import * as Screens from "app/screens"
 import Config from "../config"
 import { navigationRef, useBackButtonHandler } from "./navigationUtilities"
 import { colors } from "app/theme"
+import {ROUTES} from 'app/utils/constants'
 
 /**
  * This type allows TypeScript to know what routes are defined in this navigator
@@ -56,9 +57,9 @@ const AppStack = observer(function AppStack() {
     <Stack.Navigator
       screenOptions={{ headerShown: false, navigationBarColor: colors.background }}
     >
-          <Stack.Screen name="Welcome" component={Screens.WelcomeScreen} />
-      {/** 🔥 Your screens go here */}
-      {/* IGNITE_GENERATOR_ANCHOR_APP_STACK_SCREENS */}
+      <Stack.Screen name={ROUTES.WELCOME} component={Screens.WelcomeScreen} />   
+      <Stack.Screen name={ROUTES.NEW_EVENT} component={Screens.NewEventScreen} />   
+      <Stack.Screen name={ROUTES.MANAGE_EVENTS} component={Screens.ManageEventsScreen} />    
     </Stack.Navigator>
   )
 })

@@ -1,3 +1,4 @@
 export * from "./WelcomeScreen"
 export * from "./ErrorScreen/ErrorBoundary"
-// export other screens here
+export * from "./ManageEventsScreen"
+export * from "./NewEventScreen"
